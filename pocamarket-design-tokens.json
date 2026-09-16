@@ -1,0 +1,40 @@
+{
+  "project": {
+    "name": "PocaMarket Swap",
+    "author": "Kim Jiwon",
+    "studentId": "202409029",
+    "language": "English"
+  },
+  "feature": {
+    "name": "Photocard Swap",
+    "purpose": "Allow users to exchange owned photocards for wanted photocards through condition-based automatic matching."
+  },
+  "userFlow": [
+    "Collection Book",
+    "Select Owned Photocard",
+    "List for Swap",
+    "Select Wanted Photocard",
+    "Set Swap Conditions",
+    "Complete Swap Registration",
+    "Automatic Matching",
+    "Review Matching Result",
+    "Compare Photocard Values",
+    "Adjust Conditions or Suggest Additional Photocard",
+    "Check Condition and Video Verification",
+    "Send Swap Offer",
+    "Wait for Response",
+    "Continue in PocaTalk if Accepted"
+  ],
+  "designTokens": {
+    "atomic": {},
+    "semantic": {}
+  },
+  "rules": {
+    "reuseExistingPatterns": true,
+    "modifyUnrelatedComponents": false,
+    "inventUndefinedTokenValues": false,
+    "semanticUsesAtomicAlias": true,
+    "documentationLanguage": "English"
+  },
+  "notes": "Atomic and semantic token values will be added after the PocaMarket design system values are defined in Figma."
+}
