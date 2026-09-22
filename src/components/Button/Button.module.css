@@ -1,0 +1,61 @@
+.button {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: var(--poca-spacing-8);
+  border: 0;
+  border-radius: var(--poca-radius-12);
+  font-family: var(--poca-typography-button-font-family);
+  font-size: var(--poca-typography-button-font-size);
+  font-weight: var(--poca-typography-button-font-weight);
+  line-height: var(--poca-typography-button-line-height);
+  letter-spacing: var(--poca-typography-button-letter-spacing);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.sizeLarge {
+  height: var(--poca-dimension-56);
+  padding-inline: var(--poca-spacing-24);
+}
+
+.sizeMedium {
+  height: var(--poca-dimension-48);
+  padding-inline: var(--poca-spacing-24);
+}
+
+.sizeSmall {
+  height: var(--poca-dimension-44);
+  padding-inline: var(--poca-spacing-16);
+}
+
+.typeMain {
+  background: var(--poca-color-surface-brand-primary);
+  color: var(--poca-color-foreground-neutral-inverse);
+}
+
+.typeAlternative {
+  background: var(--poca-color-surface-neutral-inverse);
+  color: var(--poca-color-foreground-neutral-inverse);
+}
+
+.typeOutlined {
+  background: var(--poca-color-surface-neutral-primary);
+  border: var(--poca-border-width-default) solid var(--poca-color-border-neutral-primary);
+  color: var(--poca-color-foreground-neutral-primary);
+}
+
+.icon {
+  display: grid;
+  flex: 0 0 var(--poca-dimension-24);
+  width: var(--poca-dimension-24);
+  height: var(--poca-dimension-24);
+  place-items: center;
+  color: inherit;
+}
+
+.icon :global(svg) {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,37 @@
+/*
+ * Exported from the current Figma Button variables.
+ * Semantic variables preserve Figma's Atomic → Semantic alias relationship.
+ */
+:root {
+  --poca-color-atomic-neutral-100: #ffffff;
+  --poca-color-atomic-neutral-300: #e8e8eb;
+  --poca-color-atomic-neutral-900: #171719;
+  --poca-color-atomic-brand-500: #ff5b61;
+
+  --poca-color-surface-brand-primary: var(--poca-color-atomic-brand-500);
+  --poca-color-surface-neutral-primary: var(--poca-color-atomic-neutral-100);
+  --poca-color-surface-neutral-inverse: var(--poca-color-atomic-neutral-900);
+  --poca-color-foreground-neutral-primary: var(--poca-color-atomic-neutral-900);
+  --poca-color-foreground-neutral-inverse: var(--poca-color-atomic-neutral-100);
+  --poca-color-icon-neutral-primary: var(--poca-color-atomic-neutral-900);
+  --poca-color-icon-neutral-inverse: var(--poca-color-atomic-neutral-100);
+  --poca-color-border-neutral-primary: var(--poca-color-atomic-neutral-300);
+
+  --poca-spacing-8: 8px;
+  --poca-spacing-16: 16px;
+  --poca-spacing-24: 24px;
+
+  --poca-dimension-24: 24px;
+  --poca-dimension-44: 44px;
+  --poca-dimension-48: 48px;
+  --poca-dimension-56: 56px;
+
+  --poca-radius-12: 12px;
+  --poca-border-width-default: 1px;
+
+  --poca-typography-button-font-family: Pretendard, sans-serif;
+  --poca-typography-button-font-size: 16px;
+  --poca-typography-button-font-weight: 600;
+  --poca-typography-button-line-height: 24px;
+  --poca-typography-button-letter-spacing: 0%;
+}

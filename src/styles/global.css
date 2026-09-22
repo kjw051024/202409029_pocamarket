@@ -1,0 +1,19 @@
+@import "./tokens.css";
+
+:root {
+  font-family: var(--poca-typography-button-font-family);
+  color: var(--poca-color-foreground-neutral-primary);
+  background: var(--poca-color-surface-neutral-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  padding: var(--poca-spacing-24);
+}
