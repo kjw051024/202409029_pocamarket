@@ -1,38 +1,105 @@
 ---
-tokens:
-  color:
-    atomic:
-      "--poca-color-atomic-neutral-100": "#ffffff"
-      "--poca-color-atomic-neutral-300": "#e8e8eb"
-      "--poca-color-atomic-neutral-900": "#171719"
-      "--poca-color-atomic-brand-500": "#ff5b61"
-    semantic:
-      "--poca-color-surface-brand-primary": "var(--poca-color-atomic-brand-500)"
-      "--poca-color-surface-neutral-primary": "var(--poca-color-atomic-neutral-100)"
-      "--poca-color-surface-neutral-inverse": "var(--poca-color-atomic-neutral-900)"
-      "--poca-color-foreground-neutral-primary": "var(--poca-color-atomic-neutral-900)"
-      "--poca-color-foreground-neutral-inverse": "var(--poca-color-atomic-neutral-100)"
-      "--poca-color-icon-neutral-primary": "var(--poca-color-atomic-neutral-900)"
-      "--poca-color-icon-neutral-inverse": "var(--poca-color-atomic-neutral-100)"
-      "--poca-color-border-neutral-primary": "var(--poca-color-atomic-neutral-300)"
-  spacing:
-    "--poca-spacing-8": "8px"
-    "--poca-spacing-16": "16px"
-    "--poca-spacing-24": "24px"
-  dimension:
-    "--poca-dimension-24": "24px"
-    "--poca-dimension-44": "44px"
-    "--poca-dimension-48": "48px"
-    "--poca-dimension-56": "56px"
-  shape:
-    "--poca-radius-12": "12px"
-    "--poca-border-width-default": "1px"
-  typography:
-    "--poca-typography-button-font-family": "Pretendard, sans-serif"
-    "--poca-typography-button-font-size": "16px"
-    "--poca-typography-button-font-weight": 600
-    "--poca-typography-button-line-height": "24px"
-    "--poca-typography-button-letter-spacing": "0%"
+variables:
+  "Color-Atomic":
+    "Neutral100": "#FFFFFF"
+    "Neutral200": "#F6F6F8"
+    "Neutral300": "#E8E8EB"
+    "Neutral400": "#C8C8CC"
+    "Neutral500": "#8E8E93"
+    "Neutral600": "#707075"
+    "Neutral700": "#55555A"
+    "Neutral800": "#303033"
+    "Neutral900": "#171719"
+    "Brand100": "#FFF1F2"
+    "Brand200": "#FFDADD"
+    "Brand300": "#FFB8BC"
+    "Brand400": "#FF858B"
+    "Brand500": "#FF5B61"
+    "Brand600": "#E94B52"
+    "Brand700": "#C9363D"
+    "Brand800": "#A6282E"
+    "Brand900": "#7D1C22"
+    "Feature500": "#6C55FF"
+  "Color-Semantic":
+    "Foreground/Neutral/Primary":
+      alias: "Color-Atomic/Neutral900"
+    "Foreground/Neutral/Secondary":
+      alias: "Color-Atomic/Neutral700"
+    "Foreground/Neutral/Tertiary":
+      alias: "Color-Atomic/Neutral500"
+    "Foreground/Neutral/Inverse":
+      alias: "Color-Atomic/Neutral100"
+    "Foreground/Brand/Primary":
+      alias: "Color-Atomic/Brand500"
+    "Foreground/Feature/Primary":
+      alias: "Color-Atomic/Feature500"
+    "Surface/Neutral/Primary":
+      alias: "Color-Atomic/Neutral100"
+    "Surface/Neutral/Secondary":
+      alias: "Color-Atomic/Neutral200"
+    "Surface/Neutral/Inverse":
+      alias: "Color-Atomic/Neutral900"
+    "Surface/Brand/Primary":
+      alias: "Color-Atomic/Brand500"
+    "Surface/Brand/Secondary":
+      alias: "Color-Atomic/Brand100"
+    "Surface/Feature/Primary":
+      alias: "Color-Atomic/Feature500"
+    "Icon/Neutral/Primary":
+      alias: "Color-Atomic/Neutral900"
+    "Icon/Neutral/Secondary":
+      alias: "Color-Atomic/Neutral500"
+    "Icon/Neutral/Inverse":
+      alias: "Color-Atomic/Neutral100"
+    "Icon/Brand/Selected":
+      alias: "Color-Atomic/Brand500"
+    "Icon/Feature/Primary":
+      alias: "Color-Atomic/Feature500"
+    "Border/Neutral/Primary":
+      alias: "Color-Atomic/Neutral300"
+    "Border/Brand/Selected":
+      alias: "Color-Atomic/Brand500"
+  "Typography":
+    "FontFamily/Base": "Pretendard"
+    "FontSize/28": 28
+    "FontSize/24": 24
+    "FontSize/20": 20
+    "FontSize/16": 16
+    "FontSize/14": 14
+    "FontSize/12": 12
+    "FontWeight/Bold": 700
+    "FontWeight/SemiBold": 600
+    "FontWeight/Regular": 400
+    "FontWeight/Medium": 500
+    "LineHeight/36": 36
+    "LineHeight/32": 32
+    "LineHeight/28": 28
+    "LineHeight/24": 24
+    "LineHeight/20": 20
+    "LineHeight/16": 16
+    "LetterSpacing/0": 0
+  "Spacing":
+    "4": 4
+    "8": 8
+    "12": 12
+    "16": 16
+    "24": 24
+    "32": 32
+  "Dimension":
+    "4": 4
+    "16": 16
+    "24": 24
+    "44": 44
+    "48": 48
+    "52": 52
+    "56": 56
+    "72": 72
+    "80": 80
+    "104": 104
+  "Radius":
+    "12": 12
+    "16": 16
+    "999": 999
 ---
 
 # PocaMarket Design System
