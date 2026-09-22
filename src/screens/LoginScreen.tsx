@@ -20,7 +20,6 @@ export function LoginScreen() {
               autoComplete="username"
               name="username"
               placeholder="아이디를 입력해주세요"
-              required
               type="text"
             />
           </label>
@@ -31,7 +30,6 @@ export function LoginScreen() {
               autoComplete="current-password"
               name="password"
               placeholder="비밀번호를 입력해주세요"
-              required
               type="password"
             />
           </label>
