@@ -1,0 +1,53 @@
+/* Temporary login-screen layout and native input styling. This is not a design-system rule. */
+.screen {
+  display: grid;
+  min-height: 100%;
+  align-content: center;
+}
+
+.content,
+.form,
+.field,
+.actions {
+  display: grid;
+}
+
+.content {
+  gap: var(--poca-spacing-24);
+  width: 100%;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.form {
+  gap: var(--poca-spacing-24);
+}
+
+.field {
+  gap: var(--poca-spacing-8);
+}
+
+.field input {
+  width: 100%;
+  height: var(--poca-dimension-48);
+  border: var(--poca-border-width-default) solid var(--poca-color-border-neutral-primary);
+  border-radius: var(--poca-radius-12);
+  padding-inline: var(--poca-spacing-16);
+  background: var(--poca-color-surface-neutral-primary);
+  color: var(--poca-color-foreground-neutral-primary);
+  font: inherit;
+}
+
+.actions {
+  gap: var(--poca-spacing-16);
+}
+
+.fill {
+  width: 100%;
+}
+
+.fill :global(button) {
+  width: 100%;
+}
