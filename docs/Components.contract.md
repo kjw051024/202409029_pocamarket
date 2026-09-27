@@ -69,10 +69,12 @@ Figma is the source of truth for every component listed here. This file covers t
 
 ### Top App Bar — Figma `97:73`
 - Text: `Title`
+- Boolean: `Show Text Action`
 - Instance Swap: `Leading Icon`
 - Instance Swap: `Trailing Action`
-- Variant: `Layout = BackTitle | BackTitleAction | TitleAction | Collectbook`
-- Collectbook remains a Layout variant because its layout is structurally different.
+- Variant: `Layout = BackTitle | TitleAction | Collectbook`
+- `Show Text Action = false` reproduces BackTitle; `Show Text Action = true` reproduces the removed BackTitleAction state.
+- TitleAction and Collectbook remain variants because their internal Icon Button icon is not exposed as a writable Top App Bar Property.
 
 ### Bottom Navigation — Figma `99:53`
 - Instance Swap: `Home Item`
