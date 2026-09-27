@@ -92,11 +92,15 @@ Figma is the source of truth for every component listed here. This file covers t
 - Text: `Label`
 - Variant: `State = Default | Selected`
 
-### Navigation Row — Figma `119:112`
+### Navigation Row — Figma `433:170`
 - Text: `Title`, `Supporting Text`, `Value`
-- Boolean: `Show Leading`, `Show Supporting Text`, `Show Value`, `Show Trailing`
+- Boolean: `Show Leading`, `Show Supporting Text`, `Show Value`, `Show Trailing`, `Muted Surface`, `Show Border`
 - Instance Swap: `Leading`, `Trailing`
-- Variant: `Style = Outlined | Muted | Plain`
+- Active structure is one standalone component. The old `Style = Outlined | Muted | Plain` set was removed.
+- `Muted Surface = false` + `Show Border = true` reproduces Outlined.
+- `Muted Surface = true` + `Show Border = false` reproduces Muted.
+- `Muted Surface = false` + `Show Border = false` reproduces Plain.
+- The unified component height is 68px; the former 70px Outlined height came from the root border treatment rather than a separate size role.
 
 ### Section Header — Figma `119:116`
 - Text: `Title`
@@ -162,19 +166,13 @@ Figma is the source of truth for every component listed here. This file covers t
 - Variant: `Status = InProgress | Completed`
 - Status remains a variant because the structure changes between states.
 
-### Message Bubble — Figma `78:62`
-- Text: `Message`
-- Variant: `Direction = Sent | Received`
-
-### Message Row — Figma `121:115`
+### Message Row — Figma `429:154`
 - Text: `Message`, `Time`, `Read Status`
 - Boolean: `Show Read Status`
 - Variant: `Direction = Sent | Received`
-- Do not infer additional nested-property wiring beyond the public schema currently exposed by Figma.
-
-### Chat Message Meta — Figma `104:89`
-- Text: `Read Status`, `Time`
-- Boolean: `Show Read Status`
+- Message Bubble and Chat Message Meta are internal layers of Message Row and are no longer separate active components.
+- `Direction` remains a variant because the child order changes: Sent uses Meta → Bubble, while Received uses Bubble → Meta.
+- Sent and Received keep their existing bubble surface, foreground, corner, and meta styling.
 
 ### Chat Date Divider — Figma `101:86`
 - Text: `Date`
