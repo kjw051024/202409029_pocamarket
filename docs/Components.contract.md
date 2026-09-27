@@ -23,9 +23,12 @@ Figma is the source of truth for every component listed here. This file covers t
 - Variant: `Emphasis = Secondary | Primary`
 - Variant: `Decoration = None | Underline`
 
-### Icon Button — Figma `38:6`
+### Icon Button — Figma `413:150`
 - Instance Swap: `Icon`
-- Variant: `Style = Ghost | Outlined`
+- Boolean: `Show Container`
+- Active structure is one standalone component. The old `Style = Ghost | Outlined` set was removed.
+- `Show Container = false` reproduces Ghost; `Show Container = true` reproduces Outlined.
+- The Container keeps the existing Surface/Neutral/Primary, Border/Neutral/Primary, and Radius/999 Variable bindings.
 
 ### Floating Icon Button — Figma `33:3`
 - Instance Swap: `Icon`
