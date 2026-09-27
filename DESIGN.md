@@ -144,8 +144,8 @@ Use the approved shape Token where the Button Contract specifies it. No broader 
 
 Use only Components already present in the project system.
 
-- **Button** is the only Component with a GitHub implementation and approved contract. Its exact Type·Size combinations, icon behavior, states, accessibility requirements, and usage constraints are defined in the [Button Contract](docs/Button.contract.md).
-- Text Button, Icon Button, Floating Icon Button, Toggle Icon Button, Inputs, Navigation, Content, Feedback, Trade/Chat, and Marketing/Auth Components exist in the current Figma system. Their detailed Props, Token bindings, and implementation rules are not yet documented in GitHub and must not be inferred.
+- **Button** is the only Component with a GitHub implementation. Its exact Type·Size combinations, icon behavior, states, accessibility requirements, and usage constraints are defined in the [Button Contract](docs/Button.contract.md).
+- The Property, Variant, and usage rules for all other active Figma UI Components are documented in the [Components Contract](docs/Components.contract.md). Do not infer undefined Props, Token bindings, implementation rules, or new Component APIs.
 - Do not create undefined Component variants or use general Button variants to replace a separately defined Component such as Toggle Icon Button.
 
 ## Do's and Don'ts
