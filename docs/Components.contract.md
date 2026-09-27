@@ -67,14 +67,14 @@ Figma is the source of truth for every component listed here. This file covers t
 
 ## Navigation
 
-### Top App Bar — Figma `97:73`
+### Top App Bar — Figma `449:138`
 - Text: `Title`
-- Boolean: `Show Text Action`
-- Instance Swap: `Leading Icon`
-- Instance Swap: `Trailing Action`
-- Variant: `Layout = BackTitle | TitleAction | Collectbook`
-- `Show Text Action = false` reproduces BackTitle; `Show Text Action = true` reproduces the removed BackTitleAction state.
-- TitleAction and Collectbook remain variants because their internal Icon Button icon is not exposed as a writable Top App Bar Property.
+- Boolean: `Show Text Action`, `Show Trailing Action`
+- Instance Swap: `Leading Icon`, `Trailing Icon`
+- Variant: `Layout = BackTitle | Title`
+- `Show Text Action` controls the optional text action in BackTitle.
+- In `Layout = Title`, `Trailing Icon` swaps the trailing icon directly; Settings and Collectbook no longer require separate layout variants.
+- `Show Trailing Action` controls the trailing action visibility.
 
 ### Bottom Navigation — Figma `99:53`
 - Instance Swap: `Home Item`
@@ -119,10 +119,12 @@ Figma is the source of truth for every component listed here. This file covers t
 - Boolean: `Show Badge`
 - Variant: `Size = Regular | Compact`
 
-### Artist / Member Item — Figma `78:42`
+### Artist / Member Item — Figma `445:148`
 - Text: `Label`
 - Instance Swap: `Thumbnail`
-- Variant: `State = Default | Selected`
+- Boolean: `Selected`
+- Active structure is one standalone component. The old `State = Default | Selected` set was removed.
+- `Selected = false` reproduces Default; `Selected = true` shows the existing Brand-selected border treatment.
 
 ### Product Card / Grid — Figma `173:120`
 - Text: `Artist / Member`, `Product Name`, `Price`, `Trade Price`, `Quick Buy Price`
