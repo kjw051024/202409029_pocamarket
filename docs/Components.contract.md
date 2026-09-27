@@ -7,7 +7,6 @@ Figma is the source of truth for every component listed here. This file covers t
 - Code implementation: Button only. All components below currently have no code implementation unless noted.
 - Do not infer React props, new variants, new states, or new tokens from this document.
 - `Icon/*`, `Heart/*`, and `Social Logo/*` are asset components and are documented only as swap targets.
-- Hidden components prefixed with `.Deprecated/` are legacy structures and are not part of the active contract.
 
 ## Property rule
 
@@ -48,7 +47,7 @@ Figma is the source of truth for every component listed here. This file covers t
 - Boolean: `Show Trailing Icon`
 - Instance Swap: `Leading Icon`
 - Instance Swap: `Trailing Icon`
-- Active structure is a standalone component; the old single-value `State=Default` set is deprecated.
+- Active structure is one standalone component. The redundant one-value `State=Default` component set was removed.
 
 ## Labels & Status
 
@@ -126,9 +125,9 @@ Figma is the source of truth for every component listed here. This file covers t
 ### Product Card / List — Figma `390:173`
 - Boolean: `Show Quick Buy Badge`, `Show Quick Buy Price`, `Show Favorite`
 - Instance Swap: `Media`
-- Text: `Artist / Member`, `Product Name`, `가격`, `Secondary Text`
-- Active structure is one standalone component. The old `Layout=Default | QuickBuy` set is deprecated.
-- `가격` and `Secondary Text` are the current Figma property names; do not infer different code props until Figma is intentionally updated.
+- Text: `Artist / Member`, `Product Name`, `Price`, `Quick Buy Price`
+- Active structure is one standalone component. The old `Layout=Default | QuickBuy` set was removed.
+- Quick Buy Badge visibility is controlled by `Show Quick Buy Badge` instead of a Layout variant.
 
 ### Selectable Card — Figma `78:43`
 - Text: `Label`
@@ -201,7 +200,6 @@ Do not:
 - Create icon-specific variants where an Instance Swap exists.
 - Add undefined states or variants.
 - Hardcode a value that is already represented by an approved token.
-- Use hidden `.Deprecated/` sets as the active public API.
 
 ## Token and accessibility notes
 
