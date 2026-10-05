@@ -132,6 +132,11 @@ Figma is the source of truth for every component listed here. This file covers t
 - Boolean: `Show Favorite`, `Show Quick Buy Badge`
 - Variant: `Size = Compact | Regular`
 - Size is kept as a variant because information hierarchy and dimensions differ.
+- `Regular`: 184×272px outer size; existing Media remains 160×160px.
+- `Compact`: 128×208px outer size; existing Media remains 104×104px.
+- Both sizes use 12px internal padding on all sides, `Surface/Neutral/Primary` for the root surface, `Border/Neutral/Primary` for the root border, and 12px root radius.
+- The root Surface and Border keep their current Semantic Variable bindings.
+- The 12px padding and 12px radius are current Figma values; no Variable binding is currently documented for those root properties.
 
 ### Product Card / List — Figma `390:173`
 - Boolean: `Show Quick Buy Badge`, `Show Quick Buy Price`, `Show Favorite`
