@@ -132,11 +132,22 @@ Figma is the source of truth for every component listed here. This file covers t
 - Boolean: `Show Favorite`, `Show Quick Buy Badge`
 - Variant: `Size = Compact | Regular`
 - Size is kept as a variant because information hierarchy and dimensions differ.
-- `Regular`: 184×272px outer size; existing Media remains 160×160px.
-- `Compact`: 128×208px outer size; existing Media remains 104×104px.
-- Both sizes use 12px internal padding on all sides, `Surface/Neutral/Primary` for the root surface, `Border/Neutral/Primary` for the root border, and 12px root radius.
-- The root Surface and Border keep their current Semantic Variable bindings.
-- The 12px padding and 12px radius are current Figma values; no Variable binding is currently documented for those root properties.
+- The specifications below describe the current Main Component variants, not page-instance size overrides.
+
+| Main Variant | Node | Actual Width × Height | Product Media / nested Media | Root Padding (all sides) | Root Fill | Root Stroke / Border | Root Radius | Root Gap |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Compact | `173:104` | 104×208px | 104×104px | 0px | None | None (`strokes = []`) | 12px | 8px |
+| Regular | `76:22` | 184×272px | 160×160px | 12px | `Surface/Neutral/Primary` | None (`strokes = []`) | 12px | 8px |
+
+- Compact root uses horizontal Hug contents and a fixed height; 104px is its current Main Component width. Regular root uses fixed width and height.
+- Both variants have a vertical root Auto Layout. Their Content frame uses horizontal Fill and vertical Hug contents, with a 4px internal gap.
+- Root gap is bound to `Spacing/8`; Content gap is bound to `Spacing/4` in both variants.
+- Regular root Fill is bound to `Surface/Neutral/Primary`. Compact root has no Fill binding. Neither variant has a root Stroke/Border paint or binding.
+- Root padding and root radius currently have no Variable bindings. Their actual values are listed in the table.
+- Product Media and nested Media corners are bound to `Radius/12`. The default nested Media Fill is bound to `Surface/Neutral/Secondary`.
+- Existing text bindings remain: Product Name and Main Price use `Foreground/Neutral/Primary`; Artist / Member, Trade Price, and Quick Buy Price use `Foreground/Neutral/Secondary`.
+- Existing text typography bindings remain: metadata uses `FontSize/14`, `FontWeight/Regular`, `LineHeight/20`, and `LetterSpacing/0`; Main Price uses `FontSize/16`, `FontWeight/SemiBold`, `LineHeight/24`, and `LetterSpacing/0`.
+- Existing nested asset bindings remain: Favorite size uses `Dimension/44`; its Icon slot uses `Dimension/24` and inverse icon semantics. Quick Buy Badge uses `Surface/Feature/Primary`, `Spacing/4` gap, `Spacing/8` horizontal padding, `Dimension/24` height, and `Radius/12` on its bottom-left corner.
 
 ### Product Card / List — Figma `390:173`
 - Boolean: `Show Quick Buy Badge`, `Show Quick Buy Price`, `Show Favorite`
