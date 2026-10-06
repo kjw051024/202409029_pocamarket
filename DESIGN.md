@@ -111,6 +111,7 @@ This document defines the currently approved design-system rules for PocaMarket 
 - Use only Tokens, Components, and design rules currently defined in the project. Do not add undefined Tokens, Components, values, Variants, or States.
 - Reference captures can inform visual observation, but they do not establish new system rules, Tokens, or Component APIs.
 - The current implementation and contract coverage is listed in [index.md](index.md). Read it before UI work.
+- SWAP-specific FINAL screen conventions are documented in [docs/SWAP.md](docs/SWAP.md). They are screen-level rules and do not become global Tokens unless also defined in this document / `tokens.json`.
 
 ## Colors
 

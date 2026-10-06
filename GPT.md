@@ -5,6 +5,7 @@ Before creating or modifying UI, read project documents in this order:
 1. `index.md`
 2. `DESIGN.md`
 3. Only the Component Contract files required for the current task
+4. If the task affects the SWAP flow or SWAP FINAL screens, read `docs/SWAP.md`
 
 After reading `DESIGN.md` and before starting UI implementation, report to the user:
 

@@ -4,6 +4,7 @@ This folder contains the AI-readable component contracts for the PocaMarket desi
 
 - [Button Contract](Button.contract.md) — Button Figma ↔ Code contract
 - [Components Contract](Components.contract.md) — All other active Figma UI components, their current Properties, Variant values, and usage constraints
+- [SWAP Final Screen Guide](SWAP.md) — FINAL 01~15 flow and screen-level navigation, spacing, typography, icon, and data conventions
 
 ## Source of truth
 

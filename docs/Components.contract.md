@@ -317,6 +317,31 @@ These components support the PocaMarket SWAP flow. Figma remains the source of t
 - Use for mutually exclusive exchange / shipping method choices.
 - `Selected` is a Boolean because the card structure remains the same.
 
+    
+### Top App Bar / FINAL 72 — Figma `803:2745`
+- Revision-only Top App Bar Component Set used by the current SWAP FINAL screens.
+- Variant: `Layout = BackTitle | Title`.
+- Each active variant is 360×72px.
+- This component exists so the 56px original Top App Bar can remain linked to AI INITIAL comparison frames.
+- Use it only where the current FINAL screen requires the 72px revision. Do not replace the original Top App Bar globally without an explicit design-system decision.
+
+### Semantic SWAP Icon Assets
+These are 24×24 asset components. They are swap targets, not new React Props or Variant APIs.
+
+| Asset | Figma | Current semantic use |
+| --- | --- | --- |
+| `Icon/SWAP/Mail` | `795:2754` | General mail / mail-related delivery |
+| `Icon/SWAP/MapPin` | `795:2759` | In-person meeting / location |
+| `Icon/SWAP/Store` | `795:2763` | Convenience-store parcel |
+| `Icon/SWAP/Note` | `795:2767` | Memo |
+| `Icon/SWAP/Calendar` | `795:2771` | Registration date / date |
+| `Icon/SWAP/Wallet` | `795:2775` | Additional cost |
+| `Icon/SWAP/Photocard` | `795:2779` | Additional photocard |
+| `Icon/SWAP/Receipt` | `795:2783` | Tracking / registration number |
+
+- New SWAP content icons use a 1.5px rounded stroke.
+- Existing Hero Check / Hourglass visuals and existing navigation icon assets are intentionally excluded from this rule.
+- Prefer semantic Instance Swap over reusing one generic package icon for unrelated meanings.
 
 ## Usage rules
 
