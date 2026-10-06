@@ -206,6 +206,118 @@ Figma is the source of truth for every component listed here. This file covers t
 - Variant: `Provider = Naver | Kakao | X | Apple`
 - Provider remains a variant because the branding/provider identity differs.
 
+
+## SWAP
+
+These components support the PocaMarket SWAP flow. Figma remains the source of truth for the exact visual styling and Variable bindings.
+
+### Trade Pair Summary — Figma `591:245`
+- Text: `Left Label`, `Left Artist / Member`, `Left Product Name`, `Right Label`, `Right Artist / Member`, `Right Product Name`
+- Instance Swap: `Left Media`, `Right Media`
+- Main Component size: 320×205px.
+- Use for a two-sided photocard exchange summary. Content changes belong in Text / Instance Swap properties; do not create content-specific variants.
+
+### Trade Progress Item — Figma `593:293`
+- Text: `Title`, `Supporting Text`, `Date`
+- Boolean: `Show Date`, `Show Connector`
+- Variant: `State = Completed | Current | Upcoming`
+- Each Main variant is 320×76px.
+- `State` remains a Variant because the semantic progress state changes.
+- Existing page instances may use a compact height override. Do not create an extra size/state variant unless the component structure is intentionally redesigned.
+
+### Trade Detail Row — Figma `600:319`
+- Text: `Label`, `Value`
+- Boolean: `Show Leading`, `Show Divider`
+- Instance Swap: `Leading`
+- Main Component size: 320×60px.
+- Use inside trade/detail information groups. Page instances may use the existing 288px content width inside Trade Info Card.
+
+### Status Notice — Figma `600:337`
+- Text: `Title`, `Supporting Text`
+- Instance Swap: `Icon`
+- Main Component size: 320×104px.
+- Use for compact state or guidance messages. Do not create icon-specific variants.
+
+### Status Hero — Figma `600:351`
+- Text: `Title`, `Supporting Text`
+- Instance Swap: `Icon`
+- Main Component size: 320×180px.
+- Use when the state message is the primary content of the screen.
+
+### Form Field — Figma `602:363`
+- Text: `Text`, `Suffix`
+- Boolean: `Show Suffix`, `Show Trailing`
+- Instance Swap: `Trailing`
+- Main Component size: 320×56px.
+- Use Text / Boolean properties for content and optional suffix/action treatment; do not add content-specific variants.
+
+### Text Area — Figma `602:372`
+- Text: `Text`, `Count`
+- Boolean: `Show Count`
+- Main Component size: 320×116px.
+
+### Mini Photocard Card — Figma `604:351`
+- Text: `Artist / Member`, `Product Name`
+- Instance Swap: `Media`
+- Boolean: `Show Remove`
+- Main Component size: 72×112px.
+- Current SWAP screens may use a 68×108px page-instance size override.
+- Remove visibility is an optional Boolean state; do not create a separate Remove variant.
+
+### Match Score Indicator — Figma `605:364`
+- Text: `Score`
+- Variant: `Style = Ring | Bar`
+- Ring Main variant: 80×80px.
+- Bar Main variant: 320×88px.
+- Ring / Bar remain variants because their visual structure differs.
+- Important: `Score` is a Text property only. Progress geometry is not exposed as a public Component Property, so changing the score text does not automatically update the ring/bar progress. Verify the rendered progress whenever the score value is overridden.
+
+### Match Result Card — Figma `605:365`
+- Text: `Left Artist / Member`, `Left Product Name`, `Right Artist / Member`, `Right Product Name`, `Score`
+- Instance Swap: `Left Media`, `Right Media`
+- Main Component size: 320×180px.
+- Use for repeated match-result rows/cards. Match score visuals must remain consistent with the displayed `Score`.
+
+### Selection Check Badge — Figma `606:410`
+- No public Component Property is currently defined.
+- Main Component size: 24×24px.
+- Use as a reusable selected-state asset. Selection logic remains on the parent screen/card.
+
+### Trade Info Card — Figma `607:384`
+- Text: `Title`
+- Boolean: `Show Title`
+- Slot: `Content`
+- Main Component width: 320px.
+- Use `Content` for repeated Trade Detail Row instances or equivalent approved content.
+- Do not create information-count variants; the content slot is the extension point.
+
+### Photocard Summary Row — Figma `609:389`
+- Text: `Eyebrow`, `Artist / Member`, `Product Name`
+- Instance Swap: `Media`, `Trailing Icon`
+- Boolean: `Show Trailing`
+- Main Component size: 320×76px.
+
+### Choice Chip — Figma `617:285`
+- Text: `Label`
+- Boolean: `Selected`
+- Main Component size: approximately 101.33×40px in the current three-column SWAP layout.
+- `Selected` is a Boolean because the structure does not change between selected and unselected states.
+
+### Checklist Item — Figma `617:289`
+- Text: `Label`
+- Boolean: `Checked`
+- Main Component size: 320×48px.
+- `Checked` is a Boolean; do not replace it with Default / Checked variants.
+
+### Selection Option Card — Figma `618:273`
+- Text: `Title`, `Supporting Text`
+- Instance Swap: `Icon`
+- Boolean: `Selected`
+- Main Component size: 320×120px.
+- Use for mutually exclusive exchange / shipping method choices.
+- `Selected` is a Boolean because the card structure remains the same.
+
+
 ## Usage rules
 
 Correct:
