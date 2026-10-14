@@ -2,6 +2,8 @@
 
 This document records the current SWAP-specific screen conventions used by the FINAL Figma screens.
 
+> **버전 주의 (2026-10-14):** 이 문서는 비교 원본인 `01~15 / FINAL` 화면의 기준을 보존한다. 이후 수정된 `01~15 / AI 수정본`의 최신 멤버/앨범 데이터, 여백, AI 전용 컴포넌트는 [SWAP_AI_REVISION.md](SWAP_AI_REVISION.md)를 참고한다. 아래의 EVERSHINE·SUN SEEKER·MASTER : PIECE는 **FINAL 당시의 기록**이며 AI 수정본에 재적용하지 않는다.
+
 Figma remains the source of truth for the actual layout and component structure. These rules are screen-level conventions for the SWAP flow; they do not create new global Tokens unless the same value is also defined in `DESIGN.md` / `tokens.json`.
 
 ## Scope
