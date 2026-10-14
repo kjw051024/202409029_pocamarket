@@ -364,3 +364,20 @@ Do not:
 Use the currently bound Figma Variables and the approved definitions in `DESIGN.md` / `tokens.json`. If an exact per-layer binding is not listed here, Figma remains the source of truth.
 
 Only accessibility requirements explicitly present in an existing contract or implementation should be treated as approved system rules. Do not invent additional accessibility props or states.
+
+
+## AI revision-only SWAP components (not part of the global contract)
+
+The following components exist only in Figma's [`SWAP / AI 수정본 / Components`](https://www.figma.com/design/uD3XVQDpvmdP0gABzUGm0H?node-id=885-3983) section. They are **not** replacements for the existing global Main Components and have no known GitHub code implementations. Use the Figma originals for their exact Property/Variable specifications.
+
+| Figma node | AI 수정본 component | Measured frame | Role |
+| --- | --- | --- | --- |
+| `885:3984` | `Trade Detail Row / Compact` | 288×60 | Trade detail rows in narrower content slots |
+| `885:4059` | `Match Score / 98 Percent` | 320×88 | 98% bar with fixed visual progress |
+| `920:4039` | `Trade Pair Summary / Compact` | 320×156 | Compact two-sided trade pair |
+| `945:4038` | `Selection Option Card / Inset` | 320×120 | 12 / exchange method; inset selected check and consistent text layout |
+
+- Do not alter the original `Trade Detail Row`, `Match Score Indicator`, `Trade Pair Summary`, or `Selection Option Card` Main Components to mimic these AI-only revisions.
+- `Selection Option Card / Inset` keeps the shipping choice as a Boolean `Selected` concept. In current AI revision, the intended title is 14/20 SemiBold and supporting text 13/18 Regular.
+- `Match Score / 98 Percent` does **not** calculate progress geometry when the Score text changes; changing to other scores requires explicit visual verification.
+- See [SWAP AI Revision Guide](SWAP_AI_REVISION.md) for screen usage, data, spacing, and remaining tasks.
