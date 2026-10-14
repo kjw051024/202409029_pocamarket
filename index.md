@@ -16,4 +16,5 @@
 
 
 ## SWAP
-- [SWAP Final Screen Guide](docs/SWAP.md) — FINAL 01~15 flow, navigation, spacing, typography, icon, and data conventions
+- [SWAP Final Screen Guide](docs/SWAP.md) — 보존된 FINAL 01~15 기준 (비교 원본)
+- [SWAP AI Revision Guide](docs/SWAP_AI_REVISION.md) — 현재 `01~15 / AI 수정본`의 여백, 거래 데이터, 컴포넌트와 미완료 항목
