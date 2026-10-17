@@ -366,18 +366,104 @@ Use the currently bound Figma Variables and the approved definitions in `DESIGN.
 Only accessibility requirements explicitly present in an existing contract or implementation should be treated as approved system rules. Do not invent additional accessibility props or states.
 
 
-## AI revision-only SWAP components (not part of the global contract)
+## AI revision-only SWAP components (Figma-only, not global Component APIs)
 
-The following components exist only in Figma's [`SWAP / AI 수정본 / Components`](https://www.figma.com/design/uD3XVQDpvmdP0gABzUGm0H?node-id=885-3983) section. They are **not** replacements for the existing global Main Components and have no known GitHub code implementations. Use the Figma originals for their exact Property/Variable specifications.
+Current Figma location: [09 Swap — integrated component area](https://www.figma.com/design/uD3XVQDpvmdP0gABzUGm0H?node-id=591-244). The former section SWAP / AI 수정본 / Components (Node 885:3983) was removed after its seven Main Components were moved into 09 Swap on 2026-10-17. This section documents those Figma components separately; it does not promote them to global components, approved global variants, React APIs, or tokens.
 
-| Figma node | AI 수정본 component | Measured frame | Role |
-| --- | --- | --- | --- |
-| `885:3984` | `Trade Detail Row / Compact` | 288×60 | Trade detail rows in narrower content slots |
-| `885:4059` | `Match Score / 98 Percent` | 320×88 | 98% bar with fixed visual progress |
-| `920:4039` | `Trade Pair Summary / Compact` | 320×156 | Compact two-sided trade pair |
-| `945:4038` | `Selection Option Card / Inset` | 320×120 | 12 / exchange method; inset selected check and consistent text layout |
+All seven are standalone Figma Main Components (type COMPONENT), not members of a Component Set. They have no Variant properties and no GitHub code implementation. Use only the listed Text, Boolean, and Instance Swap properties. Text accepts screen-specific copy; Boolean accepts true/false; Instance Swap uses the targets offered by the actual Figma property. No additional enum values are defined here. Figma remains the source of truth for exact layer-level variable bindings.
 
-- Do not alter the original `Trade Detail Row`, `Match Score Indicator`, `Trade Pair Summary`, or `Selection Option Card` Main Components to mimic these AI-only revisions.
-- `Selection Option Card / Inset` keeps the shipping choice as a Boolean `Selected` concept. In current AI revision, the intended title is 14/20 SemiBold and supporting text 13/18 Regular.
-- `Match Score / 98 Percent` does **not** calculate progress geometry when the Score text changes; changing to other scores requires explicit visual verification.
-- See [SWAP AI Revision Guide](SWAP_AI_REVISION.md) for screen usage, data, spacing, and remaining tasks.
+### Trade Pair Summary / Compact — Figma 920:4039
+
+- Status: ACTIVE. Size 320×222px. Used 9 times in screens 03, 04, 05, 07, 08, 09 (2, including the background copy), 10, and 15.
+- Role: side-by-side outgoing and wanted photocard comparison. Portrait media is 112×146px with 12px radius and clipping; role labels appear above media, member/product text below, and a centered swap icon separates the groups.
+- Properties: Text — Left Label, Left Artist / Member, Left Product Name, Right Label, Right Artist / Member, Right Product Name. Instance Swap — Left Media, Right Media (current default is Media Placeholder 70:15). Boolean — Show Role Labels.
+- Layout: root Horizontal Auto Layout, fixed width and Hug height, zero gap/padding. Left and right groups are Vertical Auto Layout with 8px gap. Metadata groups use 4px gap and 4px top padding. Text uses Pretendard 12/16 Regular for role/product metadata and 14/20 SemiBold for member names.
+- Variables observed: Foreground/Neutral/Primary, Foreground/Neutral/Secondary, Icon/Neutral/Primary, Icon/Neutral/Secondary, Border/Brand/Selected, Surface/Neutral/Secondary, plus existing dimension binding(s).
+- Relationship: the original Trade Pair Summary (591:245) remains unchanged at 320×205px and retains its original pink-background structure. Compact is a separate information hierarchy designed around portrait media; do not force it into the original Main Component or treat its screen-level role-label overrides as a new global variant.
+- Correct use: use for the AI revision’s outgoing/wanted photocard comparison and edit copy/media through its properties. Incorrect use: do not use it as a generic trade card for unrelated information or alter the original Trade Pair Summary to imitate it.
+
+### Match Score / 98 Percent — Figma 885:4059
+
+- Status: ACTIVE. Size 320×88px. Used 2 times: screen 07 and the 09 background copy.
+- Role: fixed 98% match score with a progress bar that visually matches the score.
+- Properties: Text — Score (default display is 98%). No public progress-width property.
+- Layout: Vertical Auto Layout, fixed width and height, 8px gap, padding 12px vertical and 16px horizontal. Track is 288×8px; current Progress is 282.24×8px (288 × 0.98). Label row is 288×28px.
+- Variables observed: Foreground/Brand/Primary, Foreground/Neutral/Primary, Surface/Brand/Primary, Surface/Brand/Secondary, Surface/Neutral/Primary, and existing spacing, radius, and typography bindings.
+- Relationship: original Match Score Indicator (Component Set 605:364; Bar variant 605:358) remains unchanged. Its score is Text-only and its bar geometry does not auto-calculate; the original Bar progress is 260px. Keep this fixed-score component for the verified 98% graphic only. Changing Score text does not update progress; any changed score requires a separate visual/geometry check. Do not describe it as a reusable dynamic progress API.
+
+### Selection Option Card / Inset — Figma 945:4038
+
+- Status: ACTIVE. Size 320×120px. Used 5 times on screen 12.
+- Role: selectable shipping/exchange choice with inset check placement and selected icon background.
+- Properties: Text — Title, Supporting Text. Instance Swap — Icon. Boolean — Selected. No Variant.
+- Layout: Horizontal Auto Layout, fixed width/height, 12px root gap, 16px padding on all sides. Text group is Vertical Auto Layout with 8px gap. Icon and Selected Check instances are 24×24px.
+- Typography: title Pretendard 14/20 SemiBold; supporting text 13/18 Regular, consistent in selected and unselected states.
+- Variables observed: Border/Brand/Selected, Border/Neutral/Primary, Foreground/Brand/Primary, Foreground/Neutral/Primary, Foreground/Neutral/Secondary, Icon/Neutral/Inverse, Icon/Neutral/Primary, Surface/Brand/Primary, Surface/Brand/Secondary, Surface/Neutral/Primary, Surface/Neutral/Secondary, plus existing spacing/radius/typography bindings.
+- Relationship: original Selection Option Card (618:273) remains unchanged. Pilot testing found the original instance cannot reproduce the inset check placement and Selected-linked icon background through supported overrides; a typography override also detached its variable binding. Keep this separate structure rather than detaching or editing the original.
+- Correct use: set Selected for the actual option state and edit Title/Supporting Text. Incorrect use: do not distinguish selection by font size or add manual check/background frames outside the component.
+
+### Match Result Card / Portrait — Figma 1058:4017
+
+- Status: ACTIVE. Main size 320×232px. Used 3 times on screen 06.
+- Role: one match candidate with both photocard sides, role labels, and match score.
+- Properties: Text — Left Artist / Member, Left Product Name, Right Artist / Member, Right Product Name, Score, Left Role, Right Role. Instance Swap — Left Media, Right Media. Boolean — Show Role Labels. No Variant.
+- Layout: root Vertical Auto Layout, 8px gap, Hug height; Match Pair Card row uses Horizontal Auto Layout, 12px gap and 12px padding. Left and right card metadata groups use Vertical Auto Layout with 4px gap. Nested portrait media is 104×136px, 12px radius, clipped.
+- Variables observed: Border/Neutral/Primary, Foreground/Neutral/Primary, Foreground/Neutral/Secondary, Icon/Neutral/Secondary, Surface/Brand/Primary, Surface/Brand/Secondary, Surface/Neutral/Primary, Surface/Neutral/Secondary, plus existing typography, spacing, and dimension bindings.
+- Relationship: original Match Result Card (605:365) remains unchanged at 320×180px. Portrait media ratio, role-label placement, and score hierarchy differ. The Main Component contains two nested Media Placeholder / Portrait references; their Image Swap defaults remain connected.
+- Correct use: use for the portrait-based result list layout. Incorrect use: do not replace the original card globally or assume the score property controls geometry.
+
+### Mini Photocard Card / Portrait — Figma 1066:7885
+
+- Status: ACTIVE. Size 92×130px. Internal media is 68×90px with 12px radius and clipping. Used 4 times on screens 08, 09, 10, and 15.
+- Role: compact additional-photocard summary with member, product, image, and optional remove action.
+- Properties: Text — Artist / Member, Product Name. Instance Swap — Media (the Main default remains Media Placeholder / Portrait 1066:4023). Boolean — Show Remove. No Variant.
+- Layout: Vertical Auto Layout, 4px gap, fixed width and Hug height. Media is a nested instance; text styles are Pretendard 12/16 Medium and Regular.
+- Variables observed: Foreground/Neutral/Inverse, Foreground/Neutral/Primary, Foreground/Neutral/Secondary, Icon/Neutral/Secondary, Surface/Brand/Primary, Surface/Neutral/Secondary, plus existing radius/dimension/typography bindings.
+- Relationship: original Mini Photocard Card (604:351) remains unchanged at 72×112px with 72×72px media. Its internal media size, text width, and remove placement could not reproduce the portrait version using supported overrides. Keep the distinct Main Component.
+- Correct use: keep the remove affordance controlled by Show Remove and retain its nested media Instance Swap. Incorrect use: do not emulate its 68×90 media with a detached/manual frame.
+
+### Media Placeholder / Portrait — Figma 1066:4023
+
+- Status: INTERNAL. Main size 104×136px; no direct screen instances. Three nested Main references remain: two in Match Result Card / Portrait and one in Mini Photocard Card / Portrait.
+- Role: portrait media container used as the default media structure inside those AI revision Main Components.
+- Properties: Instance Swap — Media. The nested media asset default is 70:13; the parent AI components’ Media property default points to this Portrait Main.
+- Layout: Vertical Auto Layout, fixed width/height, zero gap/padding, 12px radius, Clip Content enabled.
+- Variables observed: Icon/Neutral/Secondary, Surface/Neutral/Secondary, and existing 104px dimension / 12px radius bindings.
+- Relationship: 10 screen media instances were migrated to the original Media Placeholder (70:15): six in 06 and one each in 08, 09, 10, and 15. Screen instances use 104×136px in 06 and 68×90px inside the smaller cards. Image Fill/Crop/radius were retained for image-filled cases. Empty-placeholder icon alignment was not proven equivalent. Keep this Main Component because three nested defaults still reference it; do not delete or change the parent defaults without a separate migration.
+- Correct use: preserve as an internal dependency for its current parent components. Incorrect use: do not assume that the empty placeholder state is interchangeable with Media Placeholder 70:15.
+
+### Trade Detail Row / Compact — Figma 885:3984
+
+- Status: DEPRECATED (management state; Main Component is retained). Size 288×60px. No current screen or nested instances.
+- Role: compact trade detail row originally used in narrower slots.
+- Properties: Text — Label, Value. Boolean — Show Leading, Show Divider. Instance Swap — Leading. No Variant.
+- Layout: Horizontal Auto Layout, fixed 288×60px, 8px gap, zero padding. Text styles are Pretendard 14/20 Regular/Medium.
+- Variables observed: Border/Neutral/Primary, Foreground/Neutral/Primary, Foreground/Neutral/Secondary, Icon/Neutral/Primary, plus existing spacing/dimension/typography bindings.
+- Integration: six screen instances (09 ×3, 10 ×3) were replaced by existing Trade Detail Row 600:319 using supported overrides; Label uses Hug and Value uses Fill. The existing row is 320×60px and preserves the screen property/variable use. This Compact Main remains in 09 Swap only as historical design-process evidence.
+- Correct use: do not add new screen instances; use Trade Detail Row 600:319 in the existing supported 09/10 layouts. Incorrect use: do not interpret Deprecated as deleted, or as a change to the existing Main.
+
+### AI revision component usage by screen
+
+Counts include component instances inside the 09 background-copy frame where present.
+
+| Screen | AI revision-only Main Component instances |
+| --- | --- |
+| 01 | None |
+| 02 | None |
+| 03 | Trade Pair Summary / Compact ×1 |
+| 04 | Trade Pair Summary / Compact ×1 |
+| 05 | Trade Pair Summary / Compact ×1 |
+| 06 | Match Result Card / Portrait ×3 |
+| 07 | Trade Pair Summary / Compact ×1; Match Score / 98 Percent ×1 |
+| 08 | Trade Pair Summary / Compact ×1; Mini Photocard Card / Portrait ×1 |
+| 09 | Trade Pair Summary / Compact ×2; Match Score / 98 Percent ×1; Mini Photocard Card / Portrait ×1 |
+| 10 | Trade Pair Summary / Compact ×1; Mini Photocard Card / Portrait ×1 |
+| 11 | None |
+| 12 | Selection Option Card / Inset ×5 |
+| 13 | None |
+| 14 | None |
+| 15 | Trade Pair Summary / Compact ×1; Mini Photocard Card / Portrait ×1 |
+
+- Screen-instance total: 23 (Pair 9, Score 2, Inset 5, Match Result 3, Mini Photocard 4). The 09 background copy is included in these counts.
+- Nested Portrait Media references: 3 Main-level references (two in Match Result Card / Portrait and one in Mini Photocard Card / Portrait). Direct screen-instance count for Portrait Media is zero.
+- AI-only components remain Figma-only. No code Component, new global Token, or Global Component Set was created during integration.
