@@ -179,7 +179,7 @@ This section records the AI component lifecycle, not the whole project as a sing
 다음 작업을 구분하여 관리한다:
 
 - [x] 현재 거래 역할의 앨범 표기를 사용자 정정에 따라 SONOROUS로 기록. 비선택 후보는 후보별 상품 데이터로 구분
-- [ ] 세림·형준·성민의 정확한 `sonorous` 실물 포토카드 사진 확보 및 화면별 Media 연결
+- [ ] 세림·형준·성민의 정확한 `SONOROUS` 실물 포토카드 사진 출처와 멤버 일치 확인
 - [ ] 01·02의 나머지 목록 포카 이름/앨범/이미지 후보 데이터 통일
 - [ ] 10·15의 데모 날짜와 실제 데이터 전환 정책 정의
 - [ ] 14→15 등기번호 값 연결 및 빈 상태 처리
