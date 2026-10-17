@@ -193,3 +193,35 @@ This section records the AI component lifecycle, not the whole project as a sing
 2. 화면의 핵심 행동, 사용하는 컴포넌트, 기존과 다른 화면 수준 예외를 확인.
 3. `AI INITIAL`, `FINAL`, 레퍼런스, 기존 Main Component/Variable을 수정하지 않음.
 4. 반영 완료/미완료와 Figma/코드 구현 여부를 분리하여 보고.
+
+## 9. Final QA closure — 2026-10-17
+
+This section records the final AI-revision-only Figma changes and checks. It does not update FINAL, the global design system, code, CSS, or tokens.
+
+### Applied screen fixes
+
+- **01 / selected outgoing photocard summary:** the existing Photocard Summary Row instance 879:2769 still uses Main 609:389; its Media instance I879:2769;609:390 still uses Media Placeholder (70:15). Its image fill was copied from selected Product Card media I879:2759;173:106 (image hash 86d2cb5ef159501f03cc30d89bd008615d78e1ae; FILL; transform [[1,0,0],[0,0.75,0.125]]). Summary-row text, layout, close action, CTA, and navigation remain unchanged.
+- **02 / selected desired photocard summary:** existing row 879:2988 and Media instance I879:2988;609:390 remain connected to the same original Main components. The selected Product Card source is I879:2977;173:106 (image hash 74b20b335002f8e6f128a4dbcfbeef40e681267f; FILL; identity transform). Text and surrounding layout remain unchanged.
+- **07 / match detail:** Content 879:3597 top padding changed from 12px to 32px. Content height recalculated from 1,071px to 1,091px; screen 879:3595 height recalculated from 1,143px to 1,163px. Width remains 360px. Existing section gaps and CTA remain in place.
+- **09 / confirmation sheet background:** background copy 988:4164 was inspected. Its content already used 32px top padding, so it needed no edit and remains aligned with the updated 07 start rule. Dim and Bottom Sheet are unchanged.
+- **15 / spacing-layer names:** 879:4458, 879:4476, and 879:4485 each measured 32px high. Names were normalized to Section Gap / 32; dimensions and screen layout were not changed.
+
+### Final visual and data review
+
+- All 15 AI-revision screen frames remain 360px wide. Their rendered screens were reviewed as a contact sheet and individually at the changed/critical screens (01, 02, 07, 09, 12, 15).
+- 01/02 summary images now render in place of the gray placeholder and their image hash, fill mode, and transform match the selected Product Card source exactly. The existing Photocard Summary Row Main and Media Placeholder Main connections remain.
+- The current trade relation remains Serim outgoing ↔ Hyeongjun incoming for 01–07; 08–15 show Serim plus Seongmin outgoing ↔ Hyeongjun incoming. The current Seongmin mini-card label in 08/09/10/15 reads SONOROUS 공방. Earlier project notes also mention a different Seongmin perk; no product text was changed because the current instruction was to preserve on-screen data and flag conflicts.
+- Product Card and later trade-pair image fills have different Figma image hashes even where the rendered portraits appear to depict the same members. The 01/02 summary fill is exact to its selected Product Card; cross-screen source-file identity and real-world card identity/licensing were not independently verified.
+- The recipient group in 13 is explicitly named 받는 사람 정보 · REF 샘플; its recipient values are retained as presentation/sample data, not verified customer information.
+- In 15, the only displayed timeline date remains 2026.10.07 on 배송 준비; the other four stages have no date. 10 retains 2026.10.07 14:30 for 교환 제안 전송.
+
+### Prototype limitation
+
+- The 15 screen frames are nested under the board frame 879:2730 on page 0:1, rather than being top-level frames. All screen and CTA reaction arrays were empty at review.
+- A normal NAVIGATE reaction was rejected by Figma because its destination must be a different top-level frame on the same page. The failed attempt was not committed; all reactions remain unchanged.
+- No new screen, flow state, or proposal cancellation was introduced. The 06 다른 매칭 보기 action has no verified additional-results destination. In 10, editing the proposal and browsing another match remain separate from accepting a pending proposal. The 10→11 transition requires an acceptance/chat event that is not represented by a current CTA.
+- Reparenting frames or creating another screen container would change the board structure and was outside the approved final-fix scope. Therefore 01→15 visual sequence is reviewed, but Figma Prototype navigation is **not complete**. Input-value transfer, including the 14→15 tracking number, still requires runtime implementation.
+
+### Implementation status
+
+Figma design updates above are applied and visually checked. No application code, CSS, tokens, or GitHub implementation was changed. The static Figma screens do not implement live search, selection-driven summary updates, transaction state, proposal acceptance, or runtime shipping-data transfer.
